@@ -1,7 +1,7 @@
 #include "AppDelegate.h"
-#include "Scene/HelloWorldScene.h"
-#include "Mgr/SceneMgr.h"
-
+#include "Scene/HelloWorldScene.hpp"
+#include "Mgr/SceneMgr.hpp"
+#include "Screen.hpp"
 USING_NS_CC;
 
 static cocos2d::Size designResolutionSize = cocos2d::Size(640, 1136);
@@ -75,8 +75,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     register_all_packages();
 
+    //スクリーン情報を初期化
+    Screen::Screen::Get().InitScreen();
+    
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
+    auto scene = HelloWorldScene::createScene();
 
     // run
     director->runWithScene(scene);

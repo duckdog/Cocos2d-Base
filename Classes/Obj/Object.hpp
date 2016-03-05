@@ -1,5 +1,5 @@
 //
-//オブジェクト（cocos2d::Sprite）管理クラス
+//
 //
 //
 #pragma once
@@ -15,6 +15,7 @@ typedef std::shared_ptr<Object> ObjectPtr;
 class Object : public cocos2d::Sprite
 {
 public:
+    
 	enum ObjectTag
 	{
 		Player = 1,
@@ -23,6 +24,7 @@ public:
 
 		Null,
 	};
+    
 	Object(cocos2d::Vec2 pos, cocos2d::Vec2 scale, cocos2d::Vec2 ancPos, ObjectTag tag);
 	~Object();
 
@@ -32,7 +34,7 @@ public:
 	std::list<ObjectPtr> FindObjectsTag(ObjectTag);
 
 protected:
-	//オブジェクト全体を管理
+	//
 	std::list<ObjectPtr> objectList_;
 	virtual bool init();
 	virtual void Create(cocos2d::Vec2 pos, cocos2d::Vec2 scale,cocos2d::Vec2 ancPos,ObjectTag tag);

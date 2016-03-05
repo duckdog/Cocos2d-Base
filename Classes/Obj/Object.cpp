@@ -1,4 +1,4 @@
-#include "Object.h"
+#include "Object.hpp"
 #include <iostream>
 
 Object::Object(cocos2d::Vec2 pos, cocos2d::Vec2 scale,
@@ -21,7 +21,7 @@ void Object::Clear()
 {
 }
 
-//タグの種類が同じものを返します.
+//
 ObjectPtr Object::FindObjectTag(ObjectTag tag)
 {
 	for (auto obj : objectList_)
@@ -30,10 +30,10 @@ ObjectPtr Object::FindObjectTag(ObjectTag tag)
 			return obj;
 	}
 	//
-	std::cout<< "何も見つかりませんでした,nullptrを返します" << std::endl;
+	std::cout<< "" << std::endl;
 	return nullptr;
 }
-//タグの種類が同じものを"全て"返します.
+//
 std::list<ObjectPtr> Object::FindObjectsTag(ObjectTag tag)
 {
 	std::list<ObjectPtr> objs;
