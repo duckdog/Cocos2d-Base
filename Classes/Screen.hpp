@@ -56,18 +56,18 @@ namespace Screen {
         
         //画面サイズの初期化
         void InitScreen();
-        float CheckDifferenceSize(cocos2d::Size reSize,cocos2d::Size originSize);
+        const cocos2d::Vec2 CheckDifferenceSize(cocos2d::Size reSize,cocos2d::Size originSize);
         static Screen& Get();
         
         const cocos2d::Vec2 ScreenSize(){return screenSize;}
-        const cocos2d::Vec2 Maginification(){return magnifiation;}
+        const cocos2d::Vec2 Maginification(){return magnification;}
         
 
     private:
         
         Screen() = default;
         cocos2d::Vec2 screenSize;
-        cocos2d::Vec2 magnifiation;
+        cocos2d::Vec2 magnification;
         
         
     
