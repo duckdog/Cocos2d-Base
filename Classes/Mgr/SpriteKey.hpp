@@ -15,6 +15,8 @@ namespace Resource {
         None = -1,
         
         Test,
+        BUtton,
+        
         Last,
     };
     

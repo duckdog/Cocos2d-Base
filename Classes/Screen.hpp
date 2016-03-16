@@ -36,18 +36,21 @@ namespace Screen {
         
     public:
         
+        cocos2d::Vec2 center;
+        cocos2d::Vec2 left;
+        cocos2d::Vec2 right;
+        cocos2d::Vec2 top;
+        cocos2d::Vec2 bottom;
+        
         cocos2d::Vec2 leftTop;
         cocos2d::Vec2 rightTop;
         cocos2d::Vec2 leftBottom;
         cocos2d::Vec2 rightBottom;
         
-        cocos2d::Vec2 center ;
         cocos2d::Vec2 leftCenter;
         cocos2d::Vec2 rightCenter;
         cocos2d::Vec2 upCenter;
         cocos2d::Vec2 downCenter;
-        cocos2d::Vec2 topCenter;
-        cocos2d::Vec2 bottomCenter;
         
         cocos2d::Vec2 leftTopCenter;
         cocos2d::Vec2 rightTopCenter;

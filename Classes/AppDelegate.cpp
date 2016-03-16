@@ -54,10 +54,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // turn on display FPS
     director->setDisplayStats(true);
 
-    // set FPS. the default value is 1.0/60 if you don't call this
+    // FPS設定.
     director->setAnimationInterval(1.0 / 60);
 
-    // Set the design resolution
+    /// ゲームの仮想画面のサイズを設定する
+    //詳細:http://qiita.com/KawabataLemon/items/00958e0d74ec11a7540b
     glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
     Size frameSize = glview->getFrameSize();
     // if the frame's height is larger than the height of medium size.
