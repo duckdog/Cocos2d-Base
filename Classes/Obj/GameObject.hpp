@@ -6,11 +6,11 @@
 #pragma once
 
 #include "cocos2d.h"
+#include<utility>
 #include <memory>
 #include <list>
 #include <vector> 
 #include "../Mgr/SpriteMgr.hpp"
-
 
 class GameObject: public cocos2d::Sprite
 {
@@ -35,7 +35,7 @@ public:
 protected:
     
     void UpdatePosScale(cocos2d::Sprite*);
-    
+   
 	cocos2d::Vec2 pos_;
 	cocos2d::Vec2 scale_;
 	cocos2d::Vec2 ancPos_;
@@ -45,4 +45,25 @@ protected:
     ObjectTag tag_;
     
 
+};
+
+//以下,引数付きのcreate関数の実装
+template<class Derived>
+struct create_func {
+    template<class... Args>
+    static Derived* Create(Args&&... args) {
+        //生成
+        auto p = new Derived();
+        //メモリ確保、初期化の可否チェック
+        if (p->init(std::forward<Args>(args)...)) {
+            //cocos2d::Refに定義されてるリファレンスカウンタ適用のautorelease関数適用
+            //カウンタを１足して,シーン遷移時に0になり、解放される。とかなんとか。
+            p->autorelease();
+            return p;
+        } else {
+            //失敗した場合NULL返却
+            delete p;
+            return nullptr;
+        }
+    }
 };
