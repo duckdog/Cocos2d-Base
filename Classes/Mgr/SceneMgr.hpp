@@ -18,6 +18,8 @@ class SceneMgr : public cocos2d::Layer
 public:
 	enum SceneType
 	{
+        TestObject,
+        
 		Title,
 		Menu,
 		Game,

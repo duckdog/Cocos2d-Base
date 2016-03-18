@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "Scene/HelloWorldScene.hpp"
+#include "Scene/ObjectCreateTestScene.hpp"
 #include "Mgr/SceneMgr.hpp"
 #include "Screen.hpp"
 USING_NS_CC;
@@ -83,7 +84,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     Screen::Screen::Get().InitScreen();
     
     // create a scene. it's an autorelease object
-    auto scene = HelloWorldScene::createScene();
+    auto scene = ObjectCreateTestScene::createScene();
 
     // run
     director->runWithScene(scene);
