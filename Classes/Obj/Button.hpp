@@ -9,7 +9,7 @@
 #pragma once
 #include "GameObject.hpp"
 
-class Button : public GameObject
+class Button : public GameObject,create_func<Button>
 {
     
 public:
@@ -19,10 +19,9 @@ public:
     virtual bool init(cocos2d::Vec2 pos,cocos2d::Vec2 scale,
                       cocos2d::Vec2 ancPos,ObjectTag tag);
     virtual void Update(float delta);
-    
-    static Button* Create(cocos2d::Vec2 pos,cocos2d::Vec2 scale,
-                          cocos2d::Vec2 ancPos,ObjectTag tag);
-    
+    /*static Button* Create(cocos2d::Vec2 pos,cocos2d::Vec2 scale,
+                          cocos2d::Vec2 ancPos,ObjectTag tag);*/
+    using create_func::Create;
     
 private:
     

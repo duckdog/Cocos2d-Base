@@ -19,7 +19,7 @@ Button::~Button()
 {
 }
 
-
+/*
 Button* Button::Create(cocos2d::Vec2 pos, cocos2d::Vec2 scale,
                        cocos2d::Vec2 ancPos, GameObject::ObjectTag tag)
 {
@@ -40,7 +40,7 @@ Button* Button::Create(cocos2d::Vec2 pos, cocos2d::Vec2 scale,
             return NULL;
         }
 }
-
+*/
 bool Button::init(cocos2d::Vec2 pos,cocos2d::Vec2 scale,cocos2d::Vec2 ancPos,ObjectTag tag)
 {
     
